@@ -1,0 +1,44 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://pixelforge:pixelforge@db:5432/pixelforge
+    volumes:
+      - ./imagenes_prueba:/srv/imagenes_prueba
+    cpus: ${API_CPUS:-1}
+    mem_limit: ${API_MEM_LIMIT:-512m}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Generador de carga. No arranca con "docker compose up" normal:
+  # docker compose --profile carga run --rm k6 run /carga/humo.js
+  k6:
+    image: grafana/k6
+    profiles: ["carga"]
+    environment:
+      BASE_URL: http://api:8000
+    volumes:
+      - ./carga:/carga
+      - ./imagenes_prueba:/imagenes_prueba:ro
+    depends_on:
+      - api
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: pixelforge
+      POSTGRES_PASSWORD: pixelforge
+      POSTGRES_DB: pixelforge
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pixelforge"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:

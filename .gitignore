@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Entorno local con credenciales
+.env
+
+# Editores
+.vscode/
+.idea/
+
+# Docker: datos locales de Postgres si alguna vez se monta fuera de volumen
+pgdata/
+
+# Imágenes de prueba: se regeneran con imagenes_prueba/generar.py
+imagenes_prueba/*.jpg
+
+# OJO: carga/resultados/ NO se ignora a propósito (datos crudos del informe).
