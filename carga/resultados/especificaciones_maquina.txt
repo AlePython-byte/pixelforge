@@ -1,0 +1,34 @@
+Especificaciones de la maquina fisica - 2026-11-11T10:30:45.2412622-05:00
+
+
+Name                      : AMD Ryzen 7 7435HS                             
+NumberOfCores             : 8
+NumberOfLogicalProcessors : 16
+MaxClockSpeed             : 3100
+L2CacheSize               : 4096
+L3CacheSize               : 16384
+
+
+
+
+
+Manufacturer : ASUSTeK COMPUTER INC.
+Model        : ASUS TUF Gaming A15 FA506NCR_FA506NCR
+RAM_GB       : 7,8
+
+
+
+
+  Capacity Speed
+  -------- -----
+8589934592  5600
+
+
+
+FriendlyName               MediaType BusType  GB
+------------               --------- -------  --
+SAMSUNG MZVL8512HELU-00BTW SSD       NVMe    477
+
+
+Docker Desktop (maquina virtual Linux):
+CPUs=16 Memoria=4007858176 Kernel=6.6.87.2-microsoft-standard-WSL2 SO=Docker Desktop

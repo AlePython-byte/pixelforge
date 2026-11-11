@@ -1,0 +1,36 @@
+Estado de la API despues de la rampa de memoria (mediana.jpg, 2 a 16 peticiones simultaneas):
+running OOMKilled=false ExitCode=0
+api-1  | INFO:     172.18.0.4:44502 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:44512 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:38018 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:35832 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:34536 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:35856 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:34560 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:38024 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:34544 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:33674 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:41312 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:33690 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:43472 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:58774 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:35846 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:33688 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:44512 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:44502 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:35856 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:43472 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:38018 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:38024 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:35832 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:58774 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:33690 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:34544 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:41312 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:34560 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:33674 - "POST /subir HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.4:34536 - "POST /subir HTTP/1.1" 200 OK
+
+Una sola peticion /subir con grande.jpg (8000x8000):
+Respuesta: {"endpoint":"subir","ancho":8000,"alto":8000,"bytes_archivo":7168809,"bytes_rgba_en_memoria":256000000,"canales_histograma":1024,"ms":1157.8,"registrado":true} HTTP=200 tiempo=1.772341s
+running OOMKilled=false ExitCode=0
