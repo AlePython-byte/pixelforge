@@ -48,9 +48,12 @@ export default function () {
 
 // Resumen en pantalla + JSON crudo con fecha y hora (UTC) en el nombre.
 export function handleSummary(data) {
+  // Si medir.ps1 pasa ETIQUETA, el JSON se llama igual que el resto de
+  // archivos del experimento (CSV de k6 y CSV de docker stats).
   const sello = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  const nombre = __ENV.ETIQUETA ? `${__ENV.ETIQUETA}.json` : `humo_${sello}.json`;
   return {
     stdout: textSummary(data, { indent: ' ', enableColors: false }),
-    [`/carga/resultados/humo_${sello}.json`]: JSON.stringify(data, null, 2),
+    [`/carga/resultados/${nombre}`]: JSON.stringify(data, null, 2),
   };
 }
